@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
+
+@font-face {
+  font-family: poppins;
+  src: url(../src/assets/fonts/poppins.regular.ttf);
+}
+
+@theme {
+  --font-inter: "Inter", sans-serif;
+
+  --font-playfair: "Playfair", serif;
+
+  --font-poppins: poppins, "serif";
+}
+
+@layer base {
+  body {
+    background: #fafafa;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@import "tailwindcss";
