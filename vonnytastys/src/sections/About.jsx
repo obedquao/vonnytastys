@@ -1,21 +1,45 @@
 import { motion } from "motion/react";
+import { useRef, useState } from "react";
+import { CirclePlay } from "lucide-react";
 
 export default function About() {
+  const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+
   return (
     <motion.section
       id="aboutus"
       className="py-19 px-4 my-16 max-w-7xl mx-auto font-inter "
     >
-      <motion.h3 className="text-center text-pink-500 mb-4 font-semibold ">
+      <motion.h3
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="text-center text-pink-500 mb-4 font-semibold "
+      >
         About Us
       </motion.h3>
-      <motion.h1 className="text-4xl text-center font-playfair font-bold">
+
+      <motion.h1
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="text-4xl text-center font-playfair font-bold"
+      >
         Refined Baking,{" "}
         <span className="text-pink-500">Exceptional Quality.</span>
       </motion.h1>
       <div className="flex-col items-center mt-11 gap-16">
-        <div className="flex flex-col lg:flex-row justify-center mt-11 gap-16">
-          <p className="font-inter max-w-xl text-center m-auto lg:w-150 lg:text-left">
+        <div className="flex flex-col lg:flex-row justify-center mt-11 gap-10 items-center">
+          <motion.p
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 1.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="font-inter max-w-xl text-center lg:max-w-lg lg:text-left"
+          >
             <span className="text-3xl font-playfair text-pink-500">“</span>
             Vonny Tastys is a modern bakery that creates delicious cakes,
             snacks, and enjoyable food experiences for all kinds of occasions.
@@ -30,16 +54,49 @@ export default function About() {
             your experience special. Every order and activity is made with care,
             passion, and a love for making people happy.
             <span className="text-3xl text-pink-500 font-playfair">”</span>.
-          </p>
-          <div className="w-100 ">
-            <video controls className="w-full h-auto rounded-lg  mt-4  ">
-              <source src="/video/aboutus.webm" type="video/mp4" />
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 1.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="w-full max-w-md relative"
+          >
+            {/* Thumbnail + Play Button */}
+            {!playing && (
+              <div
+                onClick={() => {
+                  setPlaying(true);
+                  videoRef.current.play();
+                }}
+                className="absolute inset-0 z-10 flex items-center justify-center cursor-pointer rounded-lg bg-black/20"
+              >
+                <div className=" text-white/90 flex items-center justify-center shadow-lg hover:scale-110 hover:text-pink-500 transition">
+                  <CirclePlay size={100} />
+                </div>
+              </div>
+            )}
+
+            {/* Video */}
+            <video
+              ref={videoRef}
+              controls={playing}
+              className="w-full h-auto rounded-lg"
+              poster="/video/vonny.webp"
+            >
+              <source src="/video/aboutus.webm" type="video/webm" />
             </video>
-          </div>
+          </motion.div>
         </div>
 
         {/* statistics */}
-        <div className="flex flex-wrap mt-20 gap-25  text-gray-600 justify-center ">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="flex flex-wrap mt-20 gap-25  text-gray-600 justify-center "
+        >
           <div className="flex-col text-center gap-2">
             <h3 className="text-4xl text-pink-500 font-bold">7+</h3>
             <p>Years of Experience</p>
@@ -52,11 +109,17 @@ export default function About() {
             <h3 className="text-4xl text-pink-500 font-bold">1000+</h3>
             <p>Baked Cakes</p>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Mission cards */}
-      <div className="my-20  font-inter mt-50 ">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="my-20  font-inter mt-50 "
+      >
         <h2 className="text-center text-4xl font-extrabold mb-3 font-playfair">
           Who We <span className="text-pink-500">Are</span>
         </h2>
@@ -66,7 +129,13 @@ export default function About() {
         </p>
 
         <div className="flex flex-col lg:flex-row gap-10 mt-4">
-          <div className="  p-5 flex-1 shadow-lg/30 bg-white rounded-2xl transition-all ">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="  p-5 flex-1 shadow-lg/30 bg-white rounded-2xl transition-all "
+          >
             <div>
               <img src="" alt="" />
             </div>
@@ -82,9 +151,15 @@ export default function About() {
               creative activities, we aim to offer consistency, comfort, and
               satisfaction in everything we do.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="  flex-1 p-5 shadow-lg/30 bg-white rounded-2xl transition-all ">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+            viewport={{ once: true }}
+            className="  flex-1 p-5 shadow-lg/30 bg-white rounded-2xl transition-all "
+          >
             <div>
               <img src="" alt="" />
             </div>
@@ -99,14 +174,20 @@ export default function About() {
               a preferred choice for events, relaxation, and memorable
               experiences.
             </p>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Founder */}
 
       <div className="flex flex-col lg:flex-row gap-15 justify-center my-50 lg:px-30">
-        <div className="flex-1 flex-col text-center lg:w-2xl">
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="flex-1 flex-col text-center lg:w-3xl"
+        >
           <h2 className="text-4xl font-black">
             Meet Our Head Chef and Founder of{" "}
             <span className="text-pink-500 font-bold font-playfair">
@@ -114,30 +195,36 @@ export default function About() {
             </span>
           </h2>
           <p>
-            Richmond Akagre Nsogurime is the founder and driving force behind
-            AkagreBakeryShop. An award-winning entrepreneur and a remarkably
-            self-taught baker, Richmond launched his journey in 2020 after a
-            single homemade birthday cake sparked a deep passion for the craft.
-            With no formal training, he skillfully honed his expertise using
-            online resources, transforming his creative vision into a celebrated
-            local brand.
-            <br />
-            Today, AkagreBakeryShop is renowned for its exceptional quality,
-            accessible pricing, and its mission to empower the community.
-            Richmond's practical training programs have equipped numerous
-            aspiring bakers to launch their own businesses, cementing his legacy
-            as both a master baker and a dedicated mentor. His story is a
-            powerful testament to how innovation, dedication, and self-belief
-            can build a remarkable enterprise from the ground up.
+            Yvonne Enyonam Akakpo is the founder and creative force behind Vonny
+            Tastys, a premium baking brand known for quality, consistency, and
+            exceptional taste. With over 10 years of experience, she has
+            transformed a personal passion for baking into a trusted and
+            thriving brand. A graduate of Political Science from the University
+            of Ghana and an alumna of Mawuli Senior High School, Yvonne brings
+            together analytical thinking and creative artistry. Though largely
+            self-taught, she further refined her skills through specialized
+            baking courses in both Ghana and Nigeria, strengthening her
+            professional approach to the craft. As a young and accomplished
+            entrepreneur, Yvonne successfully balances her business
+            responsibilities with family life as a wife and mother of three.At
+            the heart of Vonny Tastys is her approachable leadership, which
+            creates a sense of belonging and reflects the brand’s deep-rooted
+            commitment to purpose and experience.
           </p>
-        </div>
-        <div className="flex-1 ">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="flex-1 "
+        >
           <img
-            src="/images/vonny.jpg"
+            src="/images/founder.png"
             alt="Picture of Founder"
             className="rounded-4xl"
           />
-        </div>
+        </motion.div>
       </div>
     </motion.section>
   );

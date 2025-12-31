@@ -5,11 +5,23 @@ export default function Menu() {
   return (
     <section id="menu" className=" bg-white py-16">
       <div className="pt-8">
-        <h1 className="text-5xl text-center font-extrabold font-playfair mb-4">
+        <motion.h1
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="text-5xl text-center font-extrabold font-playfair mb-4"
+        >
           {" "}
           Our Menu{" "}
-        </h1>
-        <p className="mb-14 text-gray-500 text-sm text-center w-88 md:w-4xl m-auto font-inter">
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="mb-14 text-gray-500 text-sm text-center w-88 md:w-4xl m-auto font-inter"
+        >
           {" "}
           Our cakes and pastries are baked fresh with care to deliver delicious
           flavour, moist textures, and pure satisfaction. Choose from our
@@ -19,7 +31,7 @@ export default function Menu() {
           customized to perfectly suit your taste and occasion.
           <br /> Call us on 055 762 4449, if you want to make enquiries or
           purchase from us
-        </p>
+        </motion.p>
       </div>
 
       <motion.div

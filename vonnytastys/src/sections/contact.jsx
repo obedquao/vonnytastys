@@ -1,16 +1,34 @@
 import { MapPin, Phone, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
     <section id="contact" className=" bg-white my-16 py-21">
-      <div className="flex justify-center">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="flex justify-center"
+      >
         <h1 className=" border p-2 border-pink-500 font-boldS text-pink-500">
           #Contact us
         </h1>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-19 py-20 px-8 md:px-37.5 align-middle">
-        <div>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="grid grid-cols-1 md:grid-cols-2 gap-19 py-20 px-8 md:px-37.5 align-middle"
+      >
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true }}
+        >
           <h1 className="text-2xl md:text-4xl text-pink-500 font-bold mb-5">
             Need a Cake? <br />
             Want to Make Enquiries? <br /> Get in touch!
@@ -55,9 +73,15 @@ export default function Contact() {
               Get In Touch
             </a>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="md:shadow-xl md:rounded-2xl overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+          viewport={{ once: true }}
+          className="md:shadow-xl md:rounded-2xl overflow-hidden"
+        >
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.086696761354!2d-0.09896442590858759!3d5.700613894281183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf83ca45ac0e59%3A0x50de0ac8cfd58910!2sVonny%20Tastys%20Shop%20A!5e0!3m2!1sen!2sgh!4v1766993036314!5m2!1sen!2sgh"
             width="100%"
@@ -67,8 +91,8 @@ export default function Contact() {
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           />
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

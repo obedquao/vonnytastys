@@ -1,38 +1,73 @@
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    let ticking = false;
+
+    const onScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  return (
-    <nav
-      className={`fixed top-0 z-10  transition-[background-color,box-shadow,transform,opacity] duration-700 ease-in
+  const [isDesktop, setIsDesktop] = useState(false);
 
-        ${
-          scrolled
-            ? "bg-white/10 backdrop-blur-md shadow-md text-black p-3 md:py-1 md:px-3  md:rounded-full w-full md:w-6xl md:h-14 md:m-4 md:left-19 md:top-0 md:hover:bg-white"
-            : "bg-transparent text-white p-6 w-full"
-        }
-      `}
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 768); // md breakpoint
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <motion.nav
+      initial={false}
+      animate={{
+        backgroundColor: scrolled
+          ? "rgba(255,255,255,0.10)"
+          : "rgba(255,255,255,0)",
+        boxShadow: scrolled
+          ? "0 8px 24px rgba(0,0,0,0.08)"
+          : "0 0 0 rgba(0,0,0,0)",
+        backdropFilter: scrolled ? "blur(12px)" : "blur(0px)",
+        paddingTop: scrolled ? "0.6rem" : "1.5rem",
+        paddingBottom: scrolled ? "0.6rem" : "1.5rem",
+
+        scale: isDesktop && scrolled ? 0.9 : 1,
+      }}
+      transition={{
+        duration: 0.6,
+        ease: [0.4, 0, 0.2, 1],
+      }}
+      className={`fixed top-0 z-50 w-full mx-0 md:rounded-full px-5 md:px0 md:mt-1
+  ${scrolled ? "text-black" : "text-white"}
+`}
     >
-      <div className="flex items-center justify-between max-w-6xl mx-auto ">
+      <div className="flex items-center justify-between w-full md:max-w-7xl md:mx-auto px-0 ">
         {/* Logo */}
-        <div>
-          <img
-            src="/logo.png"
-            alt="Vonny Tastys Logo"
-            className="h-12 md:h-10 w-auto"
-          />
-        </div>
+        <img
+          src="/logo.png"
+          alt="Vonny Tastys Logo"
+          className="h-12 md:h-10 w-auto"
+        />
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-8 px-4 py-2 rounded-full text-xs font-bold">
+        <ul className="hidden md:flex gap-8 px-0 py-2 rounded-full text-xs font-bold">
           <li className="hover:text-pink-500">
             <a href="#home">Home</a>
           </li>
@@ -69,42 +104,28 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden mt-4 bg-white text-black rounded-xl shadow-lg mx-4 p-4">
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="md:hidden mt-4 bg-white text-black rounded-xl shadow-lg  p-4"
+        >
           <ul className="flex flex-col gap-4 text-sm font-bold">
-            <li>
-              <a href="#home" onClick={() => setMenuOpen(false)}>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#aboutus" onClick={() => setMenuOpen(false)}>
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="#menu" onClick={() => setMenuOpen(false)}>
-                Menu
-              </a>
-            </li>
-            <li>
-              <a href="#training" onClick={() => setMenuOpen(false)}>
-                Our Upcoming Class
-              </a>
-            </li>
-            <li>
-              <a href="#contact" onClick={() => setMenuOpen(false)}>
-                Contact
-              </a>
-            </li>
-            <a
-              href="#"
-              className="mt-2 text-center bg-pink-500 text-white rounded-lg p-3"
-            >
+            {["Home", "About Us", "Menu", "Our Upcoming Class", "Contact"].map(
+              (item) => (
+                <li key={item}>
+                  <a href="#" onClick={() => setMenuOpen(false)}>
+                    {item}
+                  </a>
+                </li>
+              )
+            )}
+            <a className="mt-2 text-center bg-pink-500 text-white rounded-lg p-3">
               About Us
             </a>
           </ul>
-        </div>
+        </motion.div>
       )}
-    </nav>
+    </motion.nav>
   );
 }
