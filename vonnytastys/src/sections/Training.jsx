@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export default function Training() {
   return (
-    <section id="training" className="py-32">
+    <section id="training" className="py-25">
       <motion.h1
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}

@@ -267,7 +267,9 @@ export default function Menu() {
         viewport={{ once: true }}
         className="flex flex-col justify-center items-center my-10"
       >
-        <h3 className="text-center font-playfair text-4xl">Extra Toppings</h3>
+        <h3 className="text-center font-playfair text-4xl">
+          ⁠Luxury Cake Icing Selections
+        </h3>
         <p className="text-center m-auto max-w-3xl pb-4 py-1 font-inter text-gray-400">
           Depending on design,cake destination and clients preference,cakes can
           be covered in:
@@ -349,6 +351,23 @@ export default function Menu() {
             image="/images/products/wed4.webp"
             link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20wedding%20cake"
           />
+
+          <Product
+            image="/images/products/w1.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20wedding%20cake"
+          />
+          <Product
+            image="/images/products/w2.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20wedding%20cake"
+          />
+          <Product
+            image="/images/products/w3.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20wedding%20cake"
+          />
+          <Product
+            image="/images/products/w4.JPG"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20wedding%20cake"
+          />
         </div>
       </div>
 
@@ -409,6 +428,23 @@ export default function Menu() {
           />
           <Product
             image="/images/products/p12.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+
+          <Product
+            image="/images/products/p13.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+          <Product
+            image="/images/products/p14.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+          <Product
+            image="/images/products/p15.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+          <Product
+            image="/images/products/p16.webp"
             link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
           />
         </div>

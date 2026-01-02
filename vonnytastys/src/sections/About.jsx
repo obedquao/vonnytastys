@@ -93,7 +93,7 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1, ease: "easeOut" }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
           className="flex flex-wrap mt-20 gap-25  text-gray-600 justify-center "
         >
@@ -116,7 +116,7 @@ export default function About() {
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
         viewport={{ once: true }}
         className="my-20  font-inter mt-50 "
       >
@@ -143,13 +143,13 @@ export default function About() {
               Our Mission
             </h3>
             <p className="text-sm">
-              Our mission is to deliver high-quality baked goods, snacks, and
-              coffee while creating welcoming food experiences for our
-              customers. We are committed to using quality ingredients, skilled
-              preparation, and thoughtful service to support celebrations,
-              events, and everyday moments. Through our bakery, coffee shop, and
-              creative activities, we aim to offer consistency, comfort, and
-              satisfaction in everything we do.
+              Our mission is to deliver high-quality baked goods and snacks
+              while creating welcoming food experiences for our customers. We
+              are committed to using quality ingredients, skilled preparation,
+              and thoughtful service to support celebrations, events, and
+              everyday moments. Through our bakery and creative activities, we
+              aim to offer consistency, comfort, and satisfaction in everything
+              we do.
             </p>
           </motion.div>
 
@@ -167,12 +167,11 @@ export default function About() {
               Our Vision
             </h3>
             <p className="text-sm">
-              Our vision is to build a trusted and respected bakery and coffee
-              brand known for quality, creativity, and excellent customer
-              experience. We strive to grow into a space where great food, good
-              coffee, and engaging activities come together, making Vonny Tastys
-              a preferred choice for events, relaxation, and memorable
-              experiences.
+              Our vision is to become a celebrated bakery brand renowned for
+              exceptional quality, innovative creations, and unforgettable
+              customer experiences. We strive to become a space where delicious
+              food and activities coexist, making Vonny Tastys the go-to option
+              for gathering, leisure, and memorable experiences.
             </p>
           </motion.div>
         </div>
@@ -182,9 +181,9 @@ export default function About() {
 
       <div className="flex flex-col lg:flex-row gap-15 justify-center my-50 lg:px-30">
         <motion.div
-          initial={{ opacity: 0, x: -40 }}
+          initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
           className="flex-1 flex-col text-center lg:w-3xl"
         >
@@ -206,16 +205,16 @@ export default function About() {
             baking courses in both Ghana and Nigeria, strengthening her
             professional approach to the craft. As a young and accomplished
             entrepreneur, Yvonne successfully balances her business
-            responsibilities with family life as a wife and mother of three.At
-            the heart of Vonny Tastys is her approachable leadership, which
-            creates a sense of belonging and reflects the brand’s deep-rooted
-            commitment to purpose and experience.
+            responsibilities with family life as a wife and as a mother.At the
+            heart of Vonny Tastys is her approachable leadership, which creates
+            a sense of belonging and reflects the brand’s deep-rooted commitment
+            to purpose and experience.
           </p>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
+          initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
           viewport={{ once: true }}
           className="flex-1 "
         >
