@@ -44,7 +44,7 @@ export default function About() {
             Vonny Tastys is a modern bakery that creates delicious cakes,
             snacks, and enjoyable food experiences for all kinds of occasions.
             We take pride in making beautiful desserts and hosting fun
-            bake-and-paint sessions, using quality ingredients and careful
+            cake-and-sip sessions, using quality ingredients and careful
             preparation in everything we do. Our goal is to bring people
             together through good food, creativity, and warm moments.
             <br />
@@ -184,7 +184,7 @@ export default function About() {
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
           className="flex-1 flex-col text-center lg:w-3xl"
         >
@@ -197,7 +197,7 @@ export default function About() {
           <p>
             Yvonne Enyonam Akakpo is the founder and creative force behind Vonny
             Tastys, a premium baking brand known for quality, consistency, and
-            exceptional taste. With over 10 years of experience, she has
+            exceptional taste. With over 9 years of experience, she has
             transformed a personal passion for baking into a trusted and
             thriving brand. A graduate of Political Science from the University
             of Ghana and an alumna of Mawuli Senior High School, Yvonne brings
@@ -220,7 +220,7 @@ export default function About() {
           className="flex-1 "
         >
           <img
-            src="/images/founder.png"
+            src="/images/founder.webp"
             alt="Picture of Founder"
             className="rounded-4xl"
           />

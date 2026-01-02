@@ -87,7 +87,7 @@ export default function Navbar() {
 
         {/* Desktop Button */}
         <a
-          href="#"
+          href="#aboutus"
           className="hidden md:block text-white bg-pink-500 rounded-xl py-1.5 px-3 hover:text-black"
         >
           About Us
@@ -111,16 +111,24 @@ export default function Navbar() {
           className="md:hidden mt-4 bg-white text-black rounded-xl shadow-lg  p-4"
         >
           <ul className="flex flex-col gap-4 text-sm font-bold">
-            {["Home", "About Us", "Menu", "Our Upcoming Class", "Contact"].map(
-              (item) => (
-                <li key={item}>
-                  <a href="#" onClick={() => setMenuOpen(false)}>
-                    {item}
-                  </a>
-                </li>
-              )
-            )}
-            <a className="mt-2 text-center bg-pink-500 text-white rounded-lg p-3">
+            {[
+              { label: "Home", href: "#home" },
+              { label: "About Us", href: "#aboutus" },
+              { label: "Menu", href: "#menu" },
+              { label: "Our Upcoming Class", href: "#training" },
+              { label: "Contact", href: "#contact" },
+            ].map((item) => (
+              <li key={item.label}>
+                <a href={item.href} onClick={() => setMenuOpen(false)}>
+                  {item.label}
+                </a>
+              </li>
+            ))}
+            <a
+              onClick={() => setMenuOpen(false)}
+              className="mt-2 text-center bg-pink-500 text-white rounded-lg p-3"
+              href="#aboutus"
+            >
               About Us
             </a>
           </ul>

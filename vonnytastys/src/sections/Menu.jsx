@@ -181,11 +181,145 @@ export default function Menu() {
                 loading="lazy"
                 className="w-4 h-4 md:w-4.5 md:h:4.5 mr-2"
               />{" "}
-              <p>White Chocolate Strawberry</p>{" "}
+              <p>White Chocolate Strawberry cake</p>{" "}
             </div>
           </div>
         </div>
       </div>
+
+      {/*Extra stuff */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="flex flex-col justify-center items-center my-10"
+      >
+        <h3 className="text-center font-playfair text-4xl">
+          Available Fillings
+        </h3>
+        <p className="text-center m-auto max-w-3xl pb-6 py-1 font-inter text-gray-400">
+          If you have a sweeter tooth,the taste of our premium cakes can be
+          elevated with cake fillings upon request.
+        </p>
+        <div className="flex flex-wrap gap-2 md:gap-7 justify-center px-4">
+          <div className="flex text-sm">
+            <img
+              src="/icons/nutella.png"
+              alt="Nutella icon"
+              loading="lazy"
+              className="w-4 h-4 md:w-4.5 md:h:4.5 mr-2"
+            />{" "}
+            <p>Nutella</p>{" "}
+          </div>
+          <div className="flex text-sm">
+            <img
+              src="/icons/biscuit.png"
+              alt="Biscoff Cream icon"
+              loading="lazy"
+              className="w-4 h-4 md:w-4.5 md:h:4.5 mr-2"
+            />{" "}
+            <p>Biscoff Cream</p>{" "}
+          </div>
+          <div className="flex text-sm">
+            <img
+              src="/icons/white-chocolate.png"
+              alt="White or Milk Chocolate Sauce icon"
+              loading="lazy"
+              className="w-4 h-4 md:w-4.5 md:h:4.5 mr-2"
+            />{" "}
+            <p>White or Milk Chocolate Sauce</p>{" "}
+          </div>
+          <div className="flex text-sm">
+            <img
+              src="/icons/strawberry.png"
+              alt="Strawberry Sauce icon"
+              loading="lazy"
+              className="w-4 h-4 md:w-4.5 md:h:4.5 mr-2"
+            />{" "}
+            <p>Strawberry Sauce</p>{" "}
+          </div>
+          <div className="flex text-sm">
+            <img
+              src="/icons/oreo.png"
+              alt="Oreo Cream icon"
+              loading="lazy"
+              className="w-4 h-4 md:w-4.5 md:h:4.5 mr-2"
+            />{" "}
+            <p>Oreo Cream</p>{" "}
+          </div>
+          <div className="flex text-sm">
+            <img
+              src="/icons/caramel.png"
+              alt="Caramel sauce icon"
+              loading="lazy"
+              className="w-4 h-4 md:w-4.5 md:h:4.5 mr-2"
+            />{" "}
+            <p>Caramel sauce</p>{" "}
+          </div>
+        </div>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="flex flex-col justify-center items-center my-10"
+      >
+        <h3 className="text-center font-playfair text-4xl">Extra Toppings</h3>
+        <p className="text-center m-auto max-w-3xl pb-4 py-1 font-inter text-gray-400">
+          Depending on design,cake destination and clients preference,cakes can
+          be covered in:
+        </p>
+        <div className="flex flex-wrap gap-2 md:gap-7 justify-center px-4">
+          <div className="flex text-sm">
+            <img
+              src="/icons/butter.png"
+              alt="ButterCream icon"
+              loading="lazy"
+              className="w-4 h-4 md:w-4.5 md:h:4.5 mr-2"
+            />{" "}
+            <p>American ButterCream</p>{" "}
+          </div>
+          <div className="flex text-sm">
+            <img
+              src="/icons/cream.png"
+              alt="Biscoff Cream icon"
+              loading="lazy"
+              className="w-4 h-4 md:w-4.5 md:h:4.5 mr-2"
+            />{" "}
+            <p>Swiss meringue buttercream</p>{" "}
+          </div>
+          <div className="flex text-sm">
+            <img
+              src="/icons/white-chocolate.png"
+              alt="White or Milk Chocolate Sauce icon"
+              loading="lazy"
+              className="w-4 h-4 md:w-4.5 md:h:4.5 mr-2"
+            />{" "}
+            <p>white or dark chocolate ganache</p>{" "}
+          </div>
+          <div className="flex text-sm">
+            <img
+              src="/icons/whip-cream.png"
+              alt="Strawberry Sauce icon"
+              loading="lazy"
+              className="w-4 h-4 md:w-4.5 md:h:4.5 mr-2"
+            />{" "}
+            <p>whipped cream</p>{" "}
+          </div>
+          <div className="flex text-sm">
+            <img
+              src="/icons/food.png"
+              alt="Oreo Cream icon"
+              loading="lazy"
+              className="w-4 h-4 md:w-4.5 md:h:4.5 mr-2"
+            />{" "}
+            <p>Fondant</p>{" "}
+          </div>
+        </div>
+      </motion.div>
 
       {/*Product section */}
       {/*Wedding cake */}
@@ -199,10 +333,22 @@ export default function Menu() {
           details tailored to your love story.
         </p>
         <div className="flex flex-wrap justify-center gap-6 my-10">
-          <Product image="/images/products/wed1.webp" />
-          <Product image="/images/products/wed2.webp" />
-          <Product image="/images/products/wed3.webp" />
-          <Product image="/images/products/wed4.webp" />
+          <Product
+            image="/images/products/wed1.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20wedding%20cake"
+          />
+          <Product
+            image="/images/products/wed2.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20wedding%20cake"
+          />
+          <Product
+            image="/images/products/wed3.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20wedding%20cake"
+          />
+          <Product
+            image="/images/products/wed4.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20wedding%20cake"
+          />
         </div>
       </div>
 
@@ -217,18 +363,54 @@ export default function Menu() {
           your taste, style, and occasion.
         </p>
         <div className="flex flex-wrap justify-center gap-6 my-10">
-          <Product image="/images/products/p1.webp" />
-          <Product image="/images/products/p2.webp" />
-          <Product image="/images/products/p3.webp" />
-          <Product image="/images/products/p4.webp" />
-          <Product image="/images/products/p5.webp" />
-          <Product image="/images/products/p6.webp" />
-          <Product image="/images/products/p7.webp" />
-          <Product image="/images/products/p8.webp" />
-          <Product image="/images/products/p9.webp" />
-          <Product image="/images/products/p10.webp" />
-          <Product image="/images/products/p11.webp" />
-          <Product image="/images/products/p12.webp" />
+          <Product
+            image="/images/products/p1.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+          <Product
+            image="/images/products/p2.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+          <Product
+            image="/images/products/p3.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+          <Product
+            image="/images/products/p4.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+          <Product
+            image="/images/products/p5.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+          <Product
+            image="/images/products/p6.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+          <Product
+            image="/images/products/p7.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+          <Product
+            image="/images/products/p8.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+          <Product
+            image="/images/products/p9.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+          <Product
+            image="/images/products/p10.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+          <Product
+            image="/images/products/p11.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
+          <Product
+            image="/images/products/p12.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20a%20cake"
+          />
         </div>
       </div>
 
@@ -242,19 +424,31 @@ export default function Menu() {
           textures, and the perfect treat for any time of day.
         </p>
         <div className="flex flex-wrap justify-center gap-6 my-10">
-          <Product image="/images/products/p1.webp" />
-          <Product image="/images/products/p2.webp" />
-          <Product image="/images/products/p3.webp" />
-          <Product image="/images/products/p4.webp" />
+          <Product
+            image="/images/products/pa1.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20pastries"
+          />
+          <Product
+            image="/images/products/pa2.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20pastries"
+          />
+          <Product
+            image="/images/products/pa3.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20pastries"
+          />
+          <Product
+            image="/images/products/pa4.webp"
+            link="https://api.whatsapp.com/send?phone=233277644259&text=I%20am%20coming%20from%20your%20website%20and%20I%20will%20like%20to%20buy%20pastries"
+          />
         </div>
       </div>
 
       <p className="w-88 md:w-4xl text-center m-auto font-bold text-gray-500">
         <span className="text-red-500 font-extrabold">Please note</span> that
         the products showcased are a curated preview from our collection. Our
-        full menu includes additional flavours, designs, and custom options. For
-        enquiries, customization, or more photos, please send us a direct
-        message or call us on 055 762 4449
+        full menu includes packaged foods, additional flavours, designs, and
+        custom options. For enquiries, customization, or more photos, please
+        send us a direct message or call us on 055 762 4449
       </p>
     </section>
   );

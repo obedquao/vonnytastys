@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import "../styles/home.css"
+import "../styles/home.css";
 
 export default function Home() {
   const [currentImage, setCurrentImage] = useState(0);
 
   const backgroundImages = [
-    "/images/hero1.jpg",
-    "/images/hero2.jpg",
-    "/images/hero3.jpg",
+    "/images/hero1.webp",
+    "/images/hero2.webp",
+    "/images/hero3.webp",
   ];
 
   useEffect(() => {
@@ -22,29 +22,21 @@ export default function Home() {
   return (
     <section
       id="home"
-     className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-black font-inter"
->
-    
+      className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-black font-inter"
+    >
       {/* Background Images */}
-   {backgroundImages.map((image, index) => (
-  <div
-    key={index}
-    style={{ backgroundImage: `url(${image})` }}
-    className={`homebg      
-      ${index === currentImage
-        ? "active"
-        : ""
-      }
+      {backgroundImages.map((image, index) => (
+        <div
+          key={index}
+          style={{ backgroundImage: `url(${image})` }}
+          className={`homebg      
+      ${index === currentImage ? "active" : ""}
     `}
-  />
-))}
-
-
+        />
+      ))}
 
       {/* Dark Overlay */}
-      <div
-        className="homeoverlay"
-      />
+      <div className="homeoverlay" />
 
       {/* Content */}
       <motion.div
@@ -76,7 +68,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.2 }}
         >
-          Freshly Baked Cakes <br/> Made With Love
+          Freshly Baked Cakes <br /> Made With Love
         </motion.h1>
 
         <motion.p
@@ -91,18 +83,18 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-         Delicious cakes, pastries, and treats made fresh to brighten every moment.
+          Delicious cakes, pastries, and treats made fresh to brighten every
+          moment.
         </motion.p>
-
 
         <div className="flex items-center gap-3.5 justify-center">
           <motion.button
-          onClick={() =>
-            document
-              .getElementById("contact")
-              .scrollIntoView({ behavior: "smooth" })
-          }
-          className="
+            onClick={() =>
+              document
+                .getElementById("menu")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+            className="
             inline-flex items-center gap-2.5
             px-4 py-4
             border-2 border-white
@@ -116,14 +108,19 @@ export default function Home() {
             hover:-translate-y-0.5
             cursor-pointer
           "
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
-        >
-          Place Your Order
-        </motion.button>
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+          >
+            Place Your Order
+          </motion.button>
           <motion.button
-          className=" inline-flex items-center gap-2.5
+            onClick={() =>
+              document
+                .getElementById("contact")
+                .scrollIntoView({ behavior: "smooth" })
+            }
+            className=" inline-flex items-center gap-2.5
             px-4 py-4
             border-2 border-pink-500
             text-pink-500
@@ -135,13 +132,13 @@ export default function Home() {
             hover:bg-white hover:border-white hover:text-pink-500
             hover:-translate-y-0.5
             cursor-pointer"
-
-              initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 1 }}
-          >Get In Touch</motion.button>
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 1 }}
+          >
+            Get In Touch
+          </motion.button>
         </div>
-        
       </motion.div>
     </section>
   );

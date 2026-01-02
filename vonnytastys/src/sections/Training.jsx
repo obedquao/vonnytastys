@@ -42,14 +42,14 @@ export default function Training() {
             delay: 0.6,
             scale: { type: "spring", visualDuration: 0.4, bounce: 0.7 },
           }}
-          className="flex flex-col p-4 gap-19 w-80 bg-white rounded-2xl shadow-sm"
+          className="flex flex-col p-4 gap-6 md:gap-19 w-80 bg-white rounded-2xl shadow-sm"
         >
           <h3 className="text-base font-inter text-center font-bold ">
             9+ Years of Proven Expertise
           </h3>
           <p className="text-center font-poppins  text-xs text-gray-400 ">
             Learn from a bakery brand built on years of real experience,
-            consistency, and customer trust — not trial and error.
+            consistency, customer trust and not trial and error.
           </p>
         </motion.div>
 
@@ -61,7 +61,7 @@ export default function Training() {
             delay: 0.8,
             scale: { type: "spring", visualDuration: 0.4, bounce: 0.8 },
           }}
-          className="flex flex-col p-4 gap-13 w-80 bg-white rounded-2xl shadow-md "
+          className="flex flex-col p-4 gap-6 md:gap-19 w-80 bg-white rounded-2xl shadow-md "
         >
           <h3 className="text-base font-inter text-center font-bold ">
             Practical and Industry-Ready Training
@@ -80,13 +80,13 @@ export default function Training() {
             delay: 1,
             scale: { type: "spring", visualDuration: 0.4, bounce: 0.85 },
           }}
-          className="flex flex-col p-2 gap-19 w-80 bg-white rounded-2xl shadow-md"
+          className="flex flex-col p-2 gap-6 md:gap-19 w-80 bg-white rounded-2xl shadow-md"
         >
           <h3 className="text-base font-inter text-center font-bold ">
             A Brand That Values Quality & Growth
           </h3>
           <p className="text-center font-poppins  text-xs text-gray-400 ">
-            We don’t just teach baking — we teach confidence, professionalism,
+            We don’t just teach baking, we teach confidence, professionalism,
             and the standards needed to grow as a baker or business.
           </p>
         </motion.div>
