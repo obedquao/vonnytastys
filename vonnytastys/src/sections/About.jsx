@@ -98,7 +98,7 @@ export default function About() {
           className="flex flex-wrap mt-20 gap-25  text-gray-600 justify-center "
         >
           <div className="flex-col text-center gap-2">
-            <h3 className="text-4xl text-pink-500 font-bold">7+</h3>
+            <h3 className="text-4xl text-pink-500 font-bold">9+</h3>
             <p>Years of Experience</p>
           </div>
           <div className="flex-col text-center">
