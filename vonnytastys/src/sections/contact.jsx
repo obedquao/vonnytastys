@@ -47,7 +47,7 @@ export default function Contact() {
           {/* LOCATION */}
           <div className="flex gap-4 mb-4">
             <MapPin className="w-5.5 h-5.5 text-pink-500 " />
-            <span>East Legon hills (Vonny Tastys on maps)</span>
+            <span>Vonny Tastys on maps</span>
           </div>
 
           {/* PHONE NUMBERS */}
@@ -83,7 +83,7 @@ export default function Contact() {
           className="md:shadow-xl md:rounded-2xl overflow-hidden"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.086696761354!2d-0.09896442590858759!3d5.700613894281183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf83ca45ac0e59%3A0x50de0ac8cfd58910!2sVonny%20Tastys%20Shop%20A!5e0!3m2!1sen!2sgh!4v1766993036314!5m2!1sen!2sgh"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.0988174971185!2d-0.10088812590861178!3d5.698861294282923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf996b06e1da79%3A0xa1915d09f916bf39!2sVonny%20Tastys!5e0!3m2!1sen!2sgh!4v1767469974894!5m2!1sen!2sgh"
             width="100%"
             height="450"
             style={{ border: 0 }}
